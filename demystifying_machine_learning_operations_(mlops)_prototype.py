@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -37,12 +38,12 @@ def get_model_metrics(reg_model, data):
 
 def main():
 
-    df = pd.read_csv('auto-mpg.csv')
+    sample_data = pd.read_csv('auto-mpg.csv')
 
-    # df = pd.DataFrame(data=sample_data.data,
-    #             columns=sample_data.feature_names)
+    df = pd.DataFrame(data=sample_data.data,
+                columns=sample_data.feature_names)
 
-    # df['mpg'] = sample_data.target
+    df['mpg'] = sample_data.target
 
     df = prepare_data(df)
 
